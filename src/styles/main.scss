@@ -43,7 +43,13 @@
  modal dialog in fullscreen
 */
 .dashboard-modal.widget-fullscreen .modal-dialog {
-  width: 98%;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.dashboard-modal.widget-fullscreen .modal-content {
+    height: 100%;
 }
 
 @import "edit";
