@@ -63,6 +63,12 @@ angular.module('adf')
       if (definition) {
         var w = dashboard.widgets[definition.type];
         if (w) {
+            
+          //set fullscreen as default
+          if (!definition.fullScreen) {
+              definition.fullScreen = true;
+          }
+            
           // pass title
           if (!definition.title) {
             definition.title = w.title;
