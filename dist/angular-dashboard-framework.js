@@ -29,7 +29,7 @@ angular.module('adf', ['adf.provider', 'adf.locale', 'ui.bootstrap'])
   .value('adfTemplatePath', '../src/templates/')
   .value('rowTemplate', '<adf-dashboard-row row="row" adf-model="adfModel" options="options" edit-mode="editMode" ng-repeat="row in column.rows" />')
   .value('columnTemplate', '<adf-dashboard-column column="column" adf-model="adfModel" options="options" edit-mode="editMode" ng-repeat="column in row.columns" />')
-  .value('adfVersion', '0.13.0-SNAPSHOT');
+  .value('adfVersion', '0.13.0-SNAPSHOT1');
 
 
 /*
@@ -552,6 +552,12 @@ angular.module('adf')
       if (definition) {
         var w = dashboard.widgets[definition.type];
         if (w) {
+            
+          //set fullscreen as default
+          if (!definition.fullScreen) {
+              definition.fullScreen = true;
+          }
+            
           // pass title
           if (!definition.title) {
             definition.title = w.title;
